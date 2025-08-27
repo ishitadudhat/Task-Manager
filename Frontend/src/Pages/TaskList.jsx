@@ -17,15 +17,15 @@ const TaskList = ({ tasks, onTaskChange }) => {
   };
 
   const deleteTask = async (id) => {
-  console.log("Trying to delete task:", id);
-  try {
-    const res = await axios.delete(`${import.meta.env.VITE_BASE_URL}/tasks/${id}`);
-    console.log("Delete response:", res.data);
-    onTaskChange();
-  } catch (error) {
-    console.error('Error in deleting task:', error.response ? error.response.data : error.message);
-  }
-};
+    console.log("Trying to delete task:", id);
+    try {
+      const res = await axios.delete(`${import.meta.env.VITE_BASE_URL}/tasks/${id}`);
+      console.log("Delete response:", res.data);
+      onTaskChange();
+    } catch (error) {
+      console.error('Error in deleting task:', error.response ? error.response.data : error.message);
+    }
+  };
 
 
   return (
@@ -38,7 +38,7 @@ const TaskList = ({ tasks, onTaskChange }) => {
         <div className="flex justify-center mb-6">
           <button
             onClick={() => setShowForm(!showForm)}
-            className="tw-bg-gradient-to-r tw-from-purple-600 tw-to-indigo-700 tw-text-white tw-px-6 tw-py-2 tw-rounded-xl tw-shadow-lg hover:tw-from-purple-700 hover:tw-to-indigo-800 transition"
+            className="bg-gradient-to-r from-white-400 to-white-600 text-purple-700 px-6 py-2 rounded-xl shadow-lg hover:from-purple-300 hover:to-purple-600 hover:text-white transition"
           >
             {showForm ? 'Close ✖️' : '➕ Add Task'}
           </button>
@@ -46,7 +46,7 @@ const TaskList = ({ tasks, onTaskChange }) => {
 
         {/* Show TaskForm inline when toggled */}
         {showForm && (
-          <div className="tw-mb-6">
+          <div className="mb-6">
             <TaskForm onTaskAdded={() => { onTaskChange(); setShowForm(false); }} />
           </div>
         )}
@@ -62,7 +62,7 @@ const TaskList = ({ tasks, onTaskChange }) => {
                 type="checkbox"
                 checked={Boolean(task.status)}
                 onChange={() => toggleStatus(task._id, task.status)}
-                className="w-5 h-5 accent-purple-700"
+                className="w-5 h-5 text-purple-900 placeholder-purple-900 border-purple-300 rounded focus:ring-purple-500"
               />
               <div>
                 <h3 className="text-lg font-semibold text-gray-800">{task.title}</h3>

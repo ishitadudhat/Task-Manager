@@ -170,7 +170,7 @@ const Form = () => {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   );
 };

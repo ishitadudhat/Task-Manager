@@ -34,7 +34,7 @@ const TaskForm = ({ onTaskAdded }) => {
         value={title}
         required
         onChange={(e) => setTitle(e.target.value)}
-        className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+        className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 text-purple-700 placeholder-purple-300"
       />
 
       <input
@@ -42,7 +42,7 @@ const TaskForm = ({ onTaskAdded }) => {
         placeholder="Description (optional)"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+        className="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 text-purple-700 placeholder-purple-300"
       />
 
       <button
